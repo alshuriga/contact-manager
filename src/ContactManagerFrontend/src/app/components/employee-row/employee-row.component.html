@@ -1,0 +1,18 @@
+<ng-container *ngIf="viewMode">
+<td>{{employee.employeeID}}</td>
+<td>{{employee.name}}</td>
+<td>{{employee.dateOfBirth}}</td>
+<td>{{employee.married}}</td>
+<td>{{employee.phone}}</td>
+<td>{{employee.salary}}</td>
+<td><button class="btn btn-danger" (click)="delete()">Delete</button><button class="ms-2 btn btn-warning" (click)="edit()">Edit</button></td>
+</ng-container>
+<ng-container *ngIf="!viewMode"[formGroup]="employeeForm">
+    <td>{{employee.employeeID}}</td>
+    <td><input type="text" class="form-control" formControlName="name"></td>
+    <td><input type="datetime-local" class="form-control" formControlName="dateOfBirth"></td>
+    <td><select class="form-control" formControlName="married"><option [ngValue]="true">Yes</option><option [ngValue]="false">No</option></select></td>
+    <td><input type="text" class="form-control" formControlName="phone"></td>
+    <td><input type="number" class="form-control" formControlName="salary"></td>
+    <td><button class="btn btn-success" (click)="save()">Save</button></td>
+</ng-container>

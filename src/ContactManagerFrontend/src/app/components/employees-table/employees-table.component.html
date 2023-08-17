@@ -1,0 +1,15 @@
+<div class="text-info mb-4">Tip: Click column names to sort a table</div>
+<table class="table table-striped">
+    <thead class="user-select-none">
+        <th (click)="sort('employeeId')">ID</th>
+        <th (click)="sort('name')">Name</th>
+        <th (click)="sort('dateOfBirth')">Date of Birth</th>  
+        <th (click)="sort('married')">Married</th>
+        <th (click)="sort('phone')">Phone</th>
+        <th (click)="sort('salary')">Salary</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+            <tr app-employee-row *ngFor="let x of employees" [employee]="x"></tr>
+    </tbody>
+</table>

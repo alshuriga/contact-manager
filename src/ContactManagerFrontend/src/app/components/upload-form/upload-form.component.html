@@ -1,0 +1,10 @@
+<div class="mb-3 container">
+    <label for="file" class="form-label">Upload CSV File:</label>
+    <div class="row">
+        <div class="col-10">
+    
+    <input class="form-control" type="file" [formControl]="fileField" id="file" (change)="onFileSelected($event)">
+</div>
+<div class="col-2"><button class="btn btn-dark" (click)="upload()">Upload</button></div>
+</div>
+  </div>
